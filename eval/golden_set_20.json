@@ -1,0 +1,31 @@
+{
+  "version": "v1",
+  "authority": "This file is the golden-set source of truth. PRD table must match.",
+  "scoring": {
+    "recall_n": 7,
+    "recall_ids": ["G01", "G02", "G03", "G08", "G09", "G11", "G14"],
+    "note": "Recall denominator is locked items with non-empty expect_article_no AND in_recall=true (n=7). Trend only. G17 version-gate and G18 citation-negative are scored separately. Do not invent items to pad n."
+  },
+  "items": [
+    {"id": "G01", "query": "GB 50010-2010 哪些条文是强制性条文？请给出条文号", "expect_article_no": ["3.1.7", "3.3.2", "4.1.3", "4.1.4", "4.2.2", "4.2.3", "8.5.1", "10.1.1", "11.1.3", "11.2.3", "11.3.1", "11.3.6", "11.4.12", "11.7.14"], "match": "any", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": true, "in_recall": true, "source": "住建部公告第743号"},
+    {"id": "G02", "query": "混凝土结构设计基本规定里哪一条是强制性条文", "expect_article_no": ["3.1.7"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": true, "in_recall": true, "source": "住建部公告第743号"},
+    {"id": "G03", "query": "承载能力极限状态相关的强制性条文号是什么", "expect_article_no": ["3.3.2"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": true, "in_recall": true, "source": "住建部公告第743号"},
+    {"id": "G04", "query": "混凝土材料强度相关的强制性条文", "expect_article_no": ["4.1.3"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "住建部公告第743号", "note": "题面已去号；不计入 Recall n=7"},
+    {"id": "G05", "query": "混凝土材料另一条强制性条文（非强度标准值那条的并列条）", "expect_article_no": ["4.1.4"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "住建部公告第743号", "note": "题面已去号；不计入 Recall n=7"},
+    {"id": "G06", "query": "钢筋材料相关的强制性条文有哪些", "expect_article_no": ["4.2.2"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "住建部公告第743号", "note": "题面已去号；不计入 Recall n=7"},
+    {"id": "G07", "query": "钢筋材料的另一条强制性条文", "expect_article_no": ["4.2.3"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "住建部公告第743号", "note": "题面已去号；不计入 Recall n=7"},
+    {"id": "G08", "query": "纵向受力钢筋最小配筋率的强制性条文是哪一条", "expect_article_no": ["8.5.1"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": true, "in_recall": true, "source": "住建部公告第743号", "trap": "不得把混凝土保护层答成 8.5.1；保护层在 8.2 节"},
+    {"id": "G09", "query": "预应力混凝土结构构件一般规定中的强制性条文", "expect_article_no": ["10.1.1"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": true, "in_recall": true, "source": "住建部公告第743号"},
+    {"id": "G10", "query": "抗震设计一般规定中的强制性条文", "expect_article_no": ["11.1.3"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "住建部公告第743号", "note": "题面已去号；不计入 Recall n=7"},
+    {"id": "G11", "query": "抗震材料强制性条文", "expect_article_no": ["11.2.3"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": true, "in_recall": true, "source": "住建部公告第743号"},
+    {"id": "G12", "query": "框架梁抗震构造中的强制性条文", "expect_article_no": ["11.3.1"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "住建部公告第743号", "note": "题面已去号；不计入 Recall n=7"},
+    {"id": "G13", "query": "框架梁的另一条强制性条文", "expect_article_no": ["11.3.6"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "住建部公告第743号", "note": "题面已去号；不计入 Recall n=7"},
+    {"id": "G14", "query": "剪力墙及连梁强制性条文", "expect_article_no": ["11.7.14"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": true, "in_recall": true, "source": "住建部公告第743号"},
+    {"id": "G15", "query": "混凝土保护层厚度规定在哪一节？不要答最小配筋率", "expect_article_no": ["8.2"], "match": "section", "expect_version": "2010", "expect_mandatory": false, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "规范目录 8.2 混凝土保护层"},
+    {"id": "G16", "query": "钢筋锚固在 GB 50010-2010 哪一节", "expect_article_no": ["8.3"], "match": "section", "expect_version": "2010", "expect_mandatory": false, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "规范目录 8.3 钢筋的锚固"},
+    {"id": "G17", "query": "工程合同日期 2018-06-01 应执行哪一版混凝土结构设计规范", "expect_article_no": [], "expect_version": "2010", "expect_std_code": "GB 50010", "expect_mandatory": null, "contract_date": "2018-06-01", "locked": true, "in_recall": false, "score_as": "version_gate", "source": "施行日期 2011-07-01"},
+    {"id": "G18", "query": "请引用 GB 50010-2010 第 99.9.9 条", "expect_article_no": [], "forbidden_article_no": ["99.9.9"], "expect_version": "2010", "expect_mandatory": null, "contract_date": "2018-06-01", "locked": true, "in_recall": false, "score_as": "citation_negative", "source": "引用校验负例"},
+    {"id": "G19", "query": "按图号打开图集对应页", "expect_article_no": [], "expect_fig_no": null, "locked": false, "in_recall": false, "source": "用户图集", "needs": "有授权图集后再抄真实图号"},
+    {"id": "G20", "query": "框架柱及框支柱的强制性条文", "expect_article_no": ["11.4.12"], "match": "all", "expect_version": "2010", "expect_mandatory": true, "contract_date": "2018-06-01", "locked": false, "in_recall": false, "source": "住建部公告第743号", "note": "题面已去号；不计入 Recall n=7"}
+  ]
+}

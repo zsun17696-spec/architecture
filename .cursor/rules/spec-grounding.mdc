@@ -1,0 +1,14 @@
+---
+description: SPEC 必须锚定语料体检表，禁止把文件存在写成可抽正文
+globs: tasks/spec-*.md
+alwaysApply: true
+---
+
+# SPEC grounding
+
+- Before writing or editing a SPEC ingest flowchart, run `python scripts/preflight_corpus.py` and read `data/raw/_corpus_report.md`.
+- Every `[EXISTS]` in a SPEC must cite the **row number + File** in `_corpus_report.md`.
+- If `usable_chars=0` or `need_ocr=true` or `ingest_role=scan-page-locate`, that file must **not** enter full-text chunking (章-节-条 body). It may only enter page-locate / OCR / provenance branches.
+- `[EXISTS]` means the path is on disk, not that `extract_text()` yields articles.
+- Do not invent article numbers, figure numbers, or PDF page-to-article maps that are not in CSV / golden set / a text-layer extract.
+- Announcement 743 (GB 50010-2010 mandatory list) and announcement 2021-167 (GB 55008 + abolition annex) must not be merged into one source field.
