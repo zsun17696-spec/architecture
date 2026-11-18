@@ -9,6 +9,7 @@ __pycache__/
 data/warehouse.sqlite
 data/clean/
 data/chunks/
+data/pages/
 node_modules/
 dist/
 build/

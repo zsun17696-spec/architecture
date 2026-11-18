@@ -1,0 +1,54 @@
+:root {
+  --bg: #14120e;
+  --bg-2: #1c1914;
+  --paper: #f4ecd8;
+  --ink: #1a1712;
+  --muted: #8a8172;
+  --line: #3a342b;
+  --seal: #b42318;
+  --gold: #c9a227;
+  --ok: #3d7a4a;
+  --font: "Source Han Sans SC", "Noto Sans SC", "Segoe UI", sans-serif;
+  --display: "Source Han Serif SC", "Noto Serif SC", "Songti SC", serif;
+}
+
+* { box-sizing: border-box; }
+html, body, #app { margin: 0; min-height: 100%; }
+body {
+  font-family: var(--font);
+  background: radial-gradient(1200px 600px at 10% -10%, #2a2318 0%, var(--bg) 45%);
+  color: var(--paper);
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: var(--gold);
+  color: #1a1408;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 600;
+}
+button.ghost {
+  background: transparent;
+  color: var(--paper);
+  border: 1px solid var(--line);
+}
+button.danger { background: var(--seal); color: #fff; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+input, select, textarea {
+  background: #0f0e0b;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.4rem 0.55rem;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { border-bottom: 1px solid var(--line); padding: 0.45rem 0.4rem; text-align: left; vertical-align: top; }
+th { color: var(--muted); font-weight: 500; }

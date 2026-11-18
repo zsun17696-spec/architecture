@@ -1,0 +1,9 @@
+{
+  "name": "specgate-tauri-handover",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Tauri2 shell around the same Vue dist. Requires rustc. Until then use ?client=tauri in the gateway SPA.",
+  "scripts": {
+    "dev:spa": "echo Open http://127.0.0.1:8000/?client=tauri (same apps/web dist)"
+  }
+}

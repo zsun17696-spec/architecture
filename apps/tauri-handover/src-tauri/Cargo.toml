@@ -1,0 +1,12 @@
+[package]
+name = "specgate-handover"
+version = "0.1.0"
+edition = "2021"
+description = "Tauri2 handover shell; same Vue dist as Electron/admin."
+
+[dependencies]
+tauri = { version = "2", features = [] }
+
+[[bin]]
+name = "specgate-handover"
+path = "src/main.rs"

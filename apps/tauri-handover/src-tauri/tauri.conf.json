@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "矩典交底",
+  "version": "0.1.0",
+  "identifier": "edu.specgate.handover",
+  "build": {
+    "frontendDist": "../../../apps/web/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "矩典 SpecGate · 交底",
+        "width": 1100,
+        "height": 780,
+        "url": "http://127.0.0.1:8000/?client=tauri"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  }
+}

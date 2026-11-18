@@ -1,0 +1,37 @@
+{
+  "documents": [
+    {
+      "id": "GB55008-2021",
+      "std_code": "GB 55008",
+      "version": "2021",
+      "title": "混凝土结构通用规范",
+      "kind": "code",
+      "status": "active",
+      "valid_from": "2022-04-01",
+      "valid_to": "2099-12-31",
+      "filename": "GB55008-2021.pdf",
+      "required": true,
+      "ingest_role": "scan-page-locate",
+      "corpus_report_row": 5
+    },
+    {
+      "id": "GB50010-2010-pointers",
+      "std_code": "GB 50010",
+      "version": "2010",
+      "title": "废止强制性条文指针",
+      "kind": "pointer",
+      "status": "active",
+      "valid_from": "2011-07-01",
+      "valid_to": "2099-12-31",
+      "mandatory_abolished_from": "2022-04-01",
+      "pointer_source": "住建部公告第743号",
+      "abolition_annex": "住房和城乡建设部公告2021年第167号 附件2",
+      "filename": "GB55008-abolished-mandatory.docx",
+      "filename_note": "provenance-only OLE/.doc；指针正文来自 CSV chapter_hint 模板",
+      "csv": "tasks/ref-gb50010-2010-mandatory.csv",
+      "required": true,
+      "ingest_role": "provenance-only",
+      "corpus_report_row": 6
+    }
+  ]
+}

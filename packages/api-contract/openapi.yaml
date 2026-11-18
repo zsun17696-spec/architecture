@@ -1,0 +1,168 @@
+openapi: 3.0.3
+info:
+  title: 矩典 SpecGate
+  version: 0.1.0
+  description: Unified ask/stream contract for admin | flutter | tauri | electron.
+servers:
+  - url: http://127.0.0.1:8000
+paths:
+  /health:
+    get:
+      responses:
+        "200":
+          description: ok
+  /v1/ask:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AskRequest"
+      responses:
+        "200":
+          description: extractive answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AskResponse"
+  /v1/ask/stream:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AskRequest"
+      responses:
+        "200":
+          description: SSE meta, token, done
+  /v1/traces/{id}:
+    get:
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: trace
+        "404":
+          description: missing
+  /v1/projects:
+    get:
+      responses:
+        "200":
+          description: seed projects
+  /v1/sync/mandatory:
+    get:
+      responses:
+        "200":
+          description: flutter offline pack
+  /v1/documents:
+    get:
+      responses:
+        "200":
+          description: documents
+  /v1/documents/{id}:
+    patch:
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: X-Role
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                valid_from:
+                  type: string
+                valid_to:
+                  type: string
+                status:
+                  type: string
+                  enum: [active, abolished]
+      responses:
+        "200":
+          description: updated
+        "403":
+          description: FORBIDDEN
+  /v1/chunks:
+    get:
+      responses:
+        "200":
+          description: chunks
+  /v1/chunks/{id}/mandatory:
+    patch:
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+        - in: header
+          name: X-Role
+          schema:
+            type: string
+      responses:
+        "200":
+          description: reviewed
+  /v1/traces:
+    get:
+      responses:
+        "200":
+          description: recent traces
+  /v1/eval/latest:
+    get:
+      responses:
+        "200":
+          description: last eval json
+components:
+  schemas:
+    AskRequest:
+      type: object
+      required: [query]
+      properties:
+        query:
+          type: string
+          minLength: 1
+          maxLength: 500
+        project_id:
+          type: string
+        contract_date:
+          type: string
+        client:
+          type: string
+          enum: [admin, flutter, tauri, electron]
+        top_k:
+          type: integer
+          default: 8
+    AskResponse:
+      type: object
+      properties:
+        trace_id:
+          type: string
+        mode:
+          type: string
+        mandatory_hit:
+          type: boolean
+        answer:
+          type: string
+        citations:
+          type: array
+        dropped_citation:
+          type: array
+        used_versions:
+          type: array
+        hit_ids:
+          type: array
+          items:
+            type: integer
